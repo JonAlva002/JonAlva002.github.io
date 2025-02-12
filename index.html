@@ -3,56 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Site</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS -->
+    <title>Project Class Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>My Project Site</h1>
+        <h1>Project Class Website</h1>
     </header>
-
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <div class="sidenav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-        <button class="dropdown-btn">Dropdown
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-        <a href="#contact">Search</a>
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Welcome to the Project Class</h2>
+            <p>This is the home page of the project class website.</p>
+        </section>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>This section contains information about the project class.</p>
+        </section>
+        <section id="projects" class="section">
+            <h2>Our Projects</h2>
+            <p>This section showcases the projects completed by the students.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>This section contains contact information.</p>
+        </section>
     </div>
-
-    <main class="main">
-        <section id="home">
-            <h2>Welcome to My Project</h2>
-            <p>This is a basic project site template. You can modify it to suit your needs.</p>
-        </section>
-
-        <section id="about">
-            <h2>About the Project</h2>
-            <p>Provide information about your project here, including goals, features, and team members.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <p>Include your contact details or a form for visitors to reach out.</p>
-        </section>
-    </main>
-
     <footer>
-        <p>&copy; 2025 My Project Site</p>
+        <p>&copy; 2025 Project Class. All rights reserved.</p>
     </footer>
-    <script src="sidebar.js"></script>
+    <script>
+        // JavaScript can be added here
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+``` ▋
